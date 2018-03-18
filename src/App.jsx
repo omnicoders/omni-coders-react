@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
+import Routes from './Routes';
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      isLoggedIn: false,
+      currentUser: {}
+    }
+  }
+
   render() {
     return (
       <div className="viewport-container">
-        <h1>Home</h1>
+        <Routes {...this.state} />    
       </div>
     );
   }
