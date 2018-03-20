@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Auth from './modules/Auth';
 import Routes from './Routes';
-//import moment from 'moment';
+import moment from 'moment';
 import axios from 'axios';
 
 class App extends Component {
@@ -9,6 +9,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
+      redirectHome: false,
       isLoggedIn: false,
       currentUser: {}
     };
@@ -26,8 +27,8 @@ class App extends Component {
     // https://omnicodersapi.codehesion.tech/api/dashboard
     axios.get('https://omnicodersapi.codehesion.tech/api/dashboard', config)
     .then(res => {
-      //let createdDate = new Date(res.data.user.createdAt);
-      //res.data.user['createdFromNow'] = moment(createdDate).fromNow();
+      let createdDate = new Date(res.data.user.createdAt);
+      res.data.user['createdFromNow'] = moment(createdDate).fromNow();
       this.setState({
         isLoggedIn: true,
         currentUser: res.data.user
@@ -38,6 +39,7 @@ class App extends Component {
   logoutCurrentUser() {
     Auth.deauthenticateUser();
     this.setState({
+      redirectHome: true,
       isLoggedIn: false,
       currentUser: {}
     });

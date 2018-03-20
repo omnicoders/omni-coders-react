@@ -9,7 +9,8 @@ class SignupPage extends Component {
       redirect: false,
       user: {
         username: "",
-        password: ""
+        password: "",
+        passwordConfirm: ""
       },
       errors: {},
     };
@@ -78,7 +79,7 @@ class SignupPage extends Component {
                       className="form-control"
                       name="username"
                       placeholder="username"
-                      value={this.state.username}
+                      value={this.state.user.username}
                       onChange={this.changeUser}
                     />
                     {this.state.errors.username && <small className="text-danger">{this.state.errors.username}</small>}
@@ -90,21 +91,49 @@ class SignupPage extends Component {
                       className="form-control"
                       name="password"
                       placeholder="password"
-                      value={this.state.password}
+                      value={this.state.user.password}
                       onChange={this.changeUser}                      
                     />
                     {this.state.errors.password && <small className="text-danger">{this.state.errors.password}</small>}
                   </div>
-                  <div className="form-group text-center">
-                    <button type="submit" className="btn btn-success mt-3">Submit</button>
+                  <div className="form-group">  
+                    <label htmlFor="passwordConfirm">Confirm Password</label>
+                    <input 
+                      type="password"
+                      className="form-control"
+                      name="passwordConfirm"
+                      placeholder="confirm password"
+                      value={this.state.user.passwordConfirm}
+                      onChange={this.changeUser}                      
+                    />
+                    { ( this.state.user.password.length > 0 && this.state.user.passwordConfirm.length > 0) ? (
+                        <div>
+                          { (this.state.user.password === this.state.user.passwordConfirm) ? (
+                            <small className="text-success">Password Match</small>
+                          ) : (
+                            <small className="text-danger">Password Does Not Match</small>
+                          )}                          
+                        </div>  
+                      ) : null }
                   </div>
+                  {(
+                    this.state.user.username.length > 0 && 
+                    this.state.user.password.length > 0 &&
+                    this.state.user.passwordConfirm.length > 0 &&
+                    this.state.user.password === this.state.user.passwordConfirm
+                  ) ? (
+                    <div className="form-group text-center">
+                      <button type="submit" className="btn btn-success mt-3">Submit</button>
+                    </div>
+                  ) : null} 
+
                 </form>
               </div>
               <ul className="list-group list-group-flush">
                 <Link 
                   className="list-group-item list-group-item-action bg-primary text-light"
                   to="/login"
-                >Login</Link>
+                >Have An Account? Login</Link>
               </ul>
             </div>
           </div>

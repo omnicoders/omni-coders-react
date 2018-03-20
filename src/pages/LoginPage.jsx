@@ -66,7 +66,7 @@ class LoginPage extends Component {
   }
 
   render() {
-    if(this.state.redirect){ return( <Redirect to="/" /> ) }
+    if(this.state.redirect){ return( <Redirect to="/profile" /> ) }
     return (
       <div className="container-fluid">
         <div className="row mt-3">
@@ -81,12 +81,26 @@ class LoginPage extends Component {
                   {this.state.errors.summary && <div className="alert alert-danger">{ this.state.errors.summary }</div>}
                   <div className="form-group">
                     <label htmlFor="username">Username</label>
-                    <input type="text" name="username" className="form-control" onChange={ this.changeUser } value={ this.state.user.username } />
+                    <input 
+                      type="text" 
+                      name="username" 
+                      className="form-control" 
+                      onChange={ this.changeUser } 
+                      value={ this.state.user.username }
+                      placeholder="username" 
+                    />
                     {this.state.errors.username && <small className="text-danger">{this.state.errors.username}</small>}
                   </div>
                   <div className="form-group">
                     <label htmlFor="password">Password</label>
-                    <input type="password" name="password" className="form-control" onChange={ this.changeUser } value={ this.state.user.password }  />
+                    <input 
+                      type="password" 
+                      name="password" 
+                      className="form-control" 
+                      onChange={ this.changeUser } 
+                      value={ this.state.user.password }
+                      placeholder="password"  
+                    />
                     {this.state.errors.password && <small className="text-danger">{this.state.errors.password}</small>}
                   </div>
                   <div className="form-group text-center">
