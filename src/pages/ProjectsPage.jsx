@@ -113,6 +113,20 @@ class ProjectsPage extends Component {
               </div>
               <ul className="list-group list-group-flush">
                 { projects }
+                <Link 
+                  className="list-group-item list-group-item-action bg-primary text-light"
+                  to="/"
+                >Home</Link>
+                <Link 
+                  className="list-group-item list-group-item-action bg-info text-light"
+                  to="/profile"
+                >Profile</Link> 
+                { this.props.isLoggedIn ? (
+                  <button
+                    className="list-group-item list-group-item-action bg-secondary text-light"
+                    onClick={ this.props.logoutCurrentUser }
+                  >Logout</button>
+                ) : null }        
               </ul>
             </div>
 

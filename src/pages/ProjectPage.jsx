@@ -79,6 +79,14 @@ class ProjectPage extends Component {
                   </div>
                   <ul className="list-group list-group-flush">
                     <Link 
+                      className="list-group-item list-group-item-action bg-primary text-light"
+                      to="/"
+                    >Home</Link>
+                    <Link 
+                      className="list-group-item list-group-item-action bg-info text-light"
+                      to="/profile"
+                    >Profile</Link> 
+                    <Link 
                       className="list-group-item list-group-item-action bg-success text-light"
                       to="/projects"
                     >Projects</Link>                    

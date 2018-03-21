@@ -20,13 +20,13 @@ class LandingPage extends Component {
               {(Object.keys(this.props.currentUser).length > 0) ? (
                 <ul className="list-group list-group-flush">               
                   <Link 
-                    className="list-group-item list-group-item-action bg-success text-light"
-                    to="/projects"
-                  >Projects</Link>
-                  <Link 
-                    className="list-group-item list-group-item-action bg-primary text-light"
+                    className="list-group-item list-group-item-action bg-info text-light"
                     to="/profile"
                   >Profile</Link>
+                  <Link 
+                    className="list-group-item list-group-item-action bg-success text-light"
+                    to="/projects"
+                  >Projects</Link>                  
                   <button
                     className="list-group-item list-group-item-action bg-secondary text-light"
                     onClick={ this.props.logoutCurrentUser }

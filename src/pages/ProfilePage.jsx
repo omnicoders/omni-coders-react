@@ -29,12 +29,18 @@ class ProfilePage extends Component {
                     <Link 
                       className="list-group-item list-group-item-action bg-primary text-light"
                       to="/"
-                    >Home</Link>                    
+                    >Home</Link>                                        
                     { this.props.isLoggedIn ? (
-                      <button
-                        className="list-group-item list-group-item-action bg-secondary text-light"
-                        onClick={ this.props.logoutCurrentUser }
-                      >Logout</button>
+                      <div>
+                        <Link 
+                          className="list-group-item list-group-item-action bg-success text-light"
+                          to="/projects"
+                        >Projects</Link>                          
+                        <button
+                          className="list-group-item list-group-item-action bg-secondary text-light"
+                          onClick={ this.props.logoutCurrentUser }
+                        >Logout</button>
+                      </div>
                     ) : null }
                   </ul>
                 </div>
