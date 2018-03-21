@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import ProfilePage from './pages/ProfilePage';
 import ProjectsPage from './pages/ProjectsPage';
+import ProjectPage from './pages/ProjectPage';
 
 class Routes extends Component {
   render() {
@@ -23,6 +24,10 @@ class Routes extends Component {
     const projectsPage = () => {
       return ( <ProjectsPage {...this.props} /> );
     };
+    const projectPage = ({ match }) => {
+      return ( <ProjectPage {...this.props} projectId={match.params.projectId}/> );
+    };
+
     return (
       <main>
         <Switch>
@@ -31,6 +36,7 @@ class Routes extends Component {
           <Route exact path='/signup' render={signupPage} />
           <Route exact path='/profile' render={profilePage} />
           <Route exact path='/projects' render={projectsPage} />
+          <Route path='/projects/:projectId' render={projectPage} />
         </Switch>
       </main>
     );
