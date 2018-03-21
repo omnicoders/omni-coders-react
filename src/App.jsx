@@ -23,7 +23,7 @@ class App extends Component {
           'authorization': `Bearer ${Auth.getToken()}`,
         }
     };
-    console.log(config);
+    //console.log(config);
     // https://omnicodersapi.codehesion.tech/api/dashboard
     axios.get('https://omnicodersapi.codehesion.tech/api/dashboard', config)
     .then(res => {

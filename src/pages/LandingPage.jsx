@@ -20,6 +20,10 @@ class LandingPage extends Component {
               {(Object.keys(this.props.currentUser).length > 0) ? (
                 <ul className="list-group list-group-flush">               
                   <Link 
+                    className="list-group-item list-group-item-action bg-success text-light"
+                    to="/projects"
+                  >Projects</Link>
+                  <Link 
                     className="list-group-item list-group-item-action bg-primary text-light"
                     to="/profile"
                   >Profile</Link>
@@ -32,6 +36,10 @@ class LandingPage extends Component {
                 <ul className="list-group list-group-flush">
                   <Link 
                     className="list-group-item list-group-item-action bg-success text-light"
+                    to="/projects"
+                  >Projects</Link>
+                  <Link 
+                    className="list-group-item list-group-item-action bg-info text-light"
                     to="/login"
                   >Login</Link>
                   <Link 
