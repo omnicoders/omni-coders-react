@@ -17,22 +17,30 @@ class LandingPage extends Component {
                   Welcome to Omni Coders!
                 </p>
               </div>
-              <ul className="list-group list-group-flush">
-                <Link 
-                  className="list-group-item list-group-item-action bg-success text-light"
-                  to="/login"
-                >Login</Link>
-                <Link 
-                  className="list-group-item list-group-item-action bg-primary text-light"
-                  to="/signup"
-                >Sign Up</Link>
-                { this.props.isLoggedIn ? (
+              {(Object.keys(this.props.currentUser).length > 0) ? (
+                <ul className="list-group list-group-flush">               
+                  <Link 
+                    className="list-group-item list-group-item-action bg-primary text-light"
+                    to="/profile"
+                  >Profile</Link>
                   <button
                     className="list-group-item list-group-item-action bg-secondary text-light"
                     onClick={ this.props.logoutCurrentUser }
                   >Logout</button>
-                ) : null }
-              </ul>
+                </ul>
+              ) : (
+                <ul className="list-group list-group-flush">
+                  <Link 
+                    className="list-group-item list-group-item-action bg-success text-light"
+                    to="/login"
+                  >Login</Link>
+                  <Link 
+                    className="list-group-item list-group-item-action bg-primary text-light"
+                    to="/signup"
+                  >Sign Up</Link>
+                </ul>              
+              )}  
+
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class ProfilePage extends Component {
 
@@ -26,6 +26,10 @@ class ProfilePage extends Component {
                     </p>
                   </div>
                   <ul className="list-group list-group-flush">
+                    <Link 
+                      className="list-group-item list-group-item-action bg-primary text-light"
+                      to="/"
+                    >Home</Link>                    
                     { this.props.isLoggedIn ? (
                       <button
                         className="list-group-item list-group-item-action bg-secondary text-light"
