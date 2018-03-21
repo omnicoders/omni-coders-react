@@ -51,7 +51,7 @@ class ProjectsPage extends Component {
       let config = {
         'headers': {
           'authorization': `Bearer ${Auth.getToken()}`,
-          'Content-Type': 'application/x-www-form-urlencoded'
+          //'Content-Type': 'application/x-www-form-urlencoded'
         },
         'json': true
       };  
