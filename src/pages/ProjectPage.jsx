@@ -90,6 +90,12 @@ class ProjectPage extends Component {
                       className="list-group-item list-group-item-action bg-success text-light"
                       to="/projects"
                     >Projects</Link>                    
+                    { (this.props.isLoggedIn && this.props.currentUser.isAdmin) ? (
+                      <Link 
+                        className="list-group-item list-group-item-action bg-warning text-light"
+                        to={`/projects/${this.state.project._id}/edit`}
+                      >Edit Project</Link>
+                    ) : null }
                     { this.props.isLoggedIn ? (
                       <button
                         className="list-group-item list-group-item-action bg-secondary text-light"

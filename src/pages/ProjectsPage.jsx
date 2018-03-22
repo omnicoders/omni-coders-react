@@ -46,7 +46,7 @@ class ProjectsPage extends Component {
   }
 
   submitNewProject(project) {
-    console.log(project)
+    //console.log(project)
     if(project.name.length > 0 && project.description.length > 0 && project.repoUrl.length > 0){
       let config = {
         'headers': {
