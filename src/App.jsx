@@ -25,7 +25,7 @@ class App extends Component {
     };
     //console.log(config);
     // https://omnicodersapi.codehesion.tech/api/dashboard
-    axios.get('https://omnicodersapi.codehesion.tech/api/dashboard', config)
+    axios.get('https://auth.omnicoders.org/api/dashboard', config)
     .then(res => {
       let createdDate = new Date(res.data.user.createdAt);
       res.data.user['createdFromNow'] = moment(createdDate).fromNow();

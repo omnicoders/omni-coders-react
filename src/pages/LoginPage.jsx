@@ -33,7 +33,7 @@ class LoginPage extends Component {
     const formData = `username=${username}&password=${password}`;
 
     const xhr = new XMLHttpRequest();
-    xhr.open('post', `https://omnicodersapi.codehesion.tech/login`);
+    xhr.open('post', `https://auth.omnicoders.org/login`);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.responseType = 'json';
     xhr.addEventListener('load', () => {
