@@ -19,17 +19,16 @@ class LandingPage extends Component {
                 <p className="card-text">
                   The purpose of Omni Coders is to provide tools, development and support that empowers local community organizations and non-profits. 
                 </p>
+                <p className="card-text">
+                  Looking to contribute? Fork one of our repositories from <a href="https://github.com/omnicoders">https://github.com/omnicoders.</a> 
+                </p>
               </div>
               {(Object.keys(this.props.currentUser).length > 0) ? (
                 <ul className="list-group list-group-flush">               
                   <Link 
                     className="list-group-item list-group-item-action bg-info text-light"
                     to="/profile"
-                  >Profile</Link>
-                  <Link 
-                    className="list-group-item list-group-item-action bg-success text-light"
-                    to="/projects"
-                  >Projects</Link>                  
+                  >Profile</Link>                  
                   <button
                     className="list-group-item list-group-item-action bg-secondary text-light"
                     onClick={ this.props.logoutCurrentUser }
