@@ -16,6 +16,9 @@ class LandingPage extends Component {
                 <p className="card-text">
                   Welcome to Omni Coders!
                 </p>
+                <p className="card-text">
+                  The purpose of Omni Coders is to provide tools, development and support that empowers local community organizations and non-profits. 
+                </p>
               </div>
               {(Object.keys(this.props.currentUser).length > 0) ? (
                 <ul className="list-group list-group-flush">               
